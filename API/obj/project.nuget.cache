@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LxanoaOVeP7ZDGuuCTok9dzOHZpcVxI9dLgVT9eaL/dNJb5GP7k/yxvvgi+Ba/ri+Y9MlPLgyEWCPY13p405ng==",
+  "dgSpecHash": "PbQjQFG/bT22e21FocE03qku70i0/RytTyiWGlzjRP40Fq8xXdzs77R35ToJEgubkGGzM4koj++IwAis1Kr4Jw==",
   "success": true,
-  "projectFilePath": "/Users/clintbrodar/Desktop/Code/ASPNET-demo/API/API.csproj",
+  "projectFilePath": "/Users/clintbrodar/Desktop/Code/ASPNETAngularDemo/API/API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

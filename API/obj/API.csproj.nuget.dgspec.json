@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/clintbrodar/Desktop/Code/ASPNET-demo/API/API.csproj": {}
+    "/Users/clintbrodar/Desktop/Code/ASPNETAngularDemo/API/API.csproj": {}
   },
   "projects": {
-    "/Users/clintbrodar/Desktop/Code/ASPNET-demo/API/API.csproj": {
+    "/Users/clintbrodar/Desktop/Code/ASPNETAngularDemo/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/clintbrodar/Desktop/Code/ASPNET-demo/API/API.csproj",
+        "projectUniqueName": "/Users/clintbrodar/Desktop/Code/ASPNETAngularDemo/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/clintbrodar/Desktop/Code/ASPNET-demo/API/API.csproj",
+        "projectPath": "/Users/clintbrodar/Desktop/Code/ASPNETAngularDemo/API/API.csproj",
         "packagesPath": "/Users/clintbrodar/.nuget/packages/",
-        "outputPath": "/Users/clintbrodar/Desktop/Code/ASPNET-demo/API/obj/",
+        "outputPath": "/Users/clintbrodar/Desktop/Code/ASPNETAngularDemo/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/clintbrodar/.nuget/NuGet/NuGet.Config"
