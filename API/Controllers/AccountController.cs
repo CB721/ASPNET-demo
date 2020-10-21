@@ -36,6 +36,27 @@ namespace ASPNETAngularDemo.API.Controllers
             return user;
         }
 
+        [HttpPost("login")]
+        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        {
+            // find a matching user in the db based on their username
+            var user = await _context.Users.SingleOrDefaultAsync(existingUser => existingUser.UserName == loginDto.UserName);
+
+            if (user == null) return Unauthorized("Invalid username.");
+
+            // pass in password salt from found user
+            using var hmac = new HMACSHA512(user.PasswordSalt);
+
+            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+            // password hash comes back as byte array
+            for (int i = 0; i < computedHash.Length; i++)
+            {
+                if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password.");
+            }
+
+            return user;
+        }
+
         private async Task<bool> UserExists(string username)
         {
             return await _context.Users.AnyAsync(existingUser => existingUser.UserName == username.ToLower());
