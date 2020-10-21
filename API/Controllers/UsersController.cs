@@ -8,10 +8,7 @@ using ASPNETAngularDemo.API.Entities;
 
 namespace ASPNETAngularDemo.API.Controllers
 {
-    [ApiController]
-    // request to api/users
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
         public UsersController(DataContext context)
