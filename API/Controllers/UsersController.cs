@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,11 +16,15 @@ namespace ASPNETAngularDemo.API.Controllers
         {
             _context = context;
         }
+        // unprotected route
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
+        // protected route - ms authorization package needed
+        [Authorize]
         // api/users/3
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id)
