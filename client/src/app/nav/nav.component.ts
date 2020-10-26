@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   title = 'Dating App';
+  model: any = {};
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  login() {
+    console.log(this.model)
+  }
 }
