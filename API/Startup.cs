@@ -53,7 +53,7 @@ namespace API
             app.UseRouting();
             // cors must be implemented here
             app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
-
+            // authentication must come before authorization
             app.UseAuthentication();
 
             app.UseAuthorization();
