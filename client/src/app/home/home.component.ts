@@ -8,19 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   isRegisterMode: Boolean = false;
-  users: any;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.getUsers();
-  }
+  ngOnInit(): void {}
   registerToggle() {
     this.isRegisterMode = !this.isRegisterMode;
   }
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe(users => this.users = users);
-  }
+
   cancelRegisterMode(event: Boolean) {
     this.isRegisterMode = event;
   }
