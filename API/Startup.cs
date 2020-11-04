@@ -14,10 +14,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using ASPNETAngularDemo.API.Data;
-using ASPNETAngularDemo.API.Interfaces;
-using ASPNETAngularDemo.API.Services;
-using ASPNETAngularDemo.API.Extensions;
+using API.Data;
+using API.Interfaces;
+using API.Services;
+using API.Extensions;
 using API.Middleware;
 
 namespace API

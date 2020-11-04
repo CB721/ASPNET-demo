@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASPNETAngularDemo.API.Controllers
+namespace API.Controllers
 {
     [ApiController]
     // request to api/users

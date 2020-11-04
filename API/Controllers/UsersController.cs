@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Authorization;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ASPNETAngularDemo.API.Data;
-using ASPNETAngularDemo.API.Entities;
+using API.Data;
+using API.Entities;
 
-namespace ASPNETAngularDemo.API.Controllers
+namespace API.Controllers
 {
     public class UsersController : BaseApiController
     {

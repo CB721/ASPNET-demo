@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System;
 using System.Net;
 using System.Text.Json;
-using ASPNETAngularDemo.API.Errors;
+using API.Errors;
 
 namespace API.Middleware
 {

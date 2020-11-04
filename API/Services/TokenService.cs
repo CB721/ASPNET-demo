@@ -1,5 +1,5 @@
-using ASPNETAngularDemo.API.Interfaces;
-using ASPNETAngularDemo.API.Entities;
+using API.Interfaces;
+using API.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using System;
 
-namespace ASPNETAngularDemo.API.Services
+namespace API.Services
 
 {
     public class TokenService : ITokenService

@@ -1,10 +1,10 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using ASPNETAngularDemo.API.Entities;
-using ASPNETAngularDemo.API.Data;
+using API.Entities;
+using API.Data;
 
-namespace ASPNETAngularDemo.API.Controllers
+namespace API.Controllers
 {
     public class ErrorController : BaseApiController
     {

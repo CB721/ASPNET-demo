@@ -3,12 +3,12 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ASPNETAngularDemo.API.Data;
-using ASPNETAngularDemo.API.Entities;
-using ASPNETAngularDemo.API.DTOs;
-using ASPNETAngularDemo.API.Interfaces;
+using API.Data;
+using API.Entities;
+using API.DTOs;
+using API.Interfaces;
 
-namespace ASPNETAngularDemo.API.Controllers
+namespace API.Controllers
 {
     public class AccountController : BaseApiController
     {

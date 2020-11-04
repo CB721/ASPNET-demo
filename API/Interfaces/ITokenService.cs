@@ -1,6 +1,6 @@
-using ASPNETAngularDemo.API.Entities;
+using API.Entities;
 
-namespace ASPNETAngularDemo.API.Interfaces
+namespace API.Interfaces
 {
     // standard to prefix interfaces with 'I'
     public interface ITokenService

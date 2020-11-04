@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using ASPNETAngularDemo.API.Entities;
+using API.Entities;
 
-namespace ASPNETAngularDemo.API.Data
+namespace API.Data
 {
     public class DataContext : DbContext
     {

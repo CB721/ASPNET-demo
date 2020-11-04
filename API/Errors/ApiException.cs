@@ -1,4 +1,4 @@
-namespace ASPNETAngularDemo.API.Errors
+namespace API.Errors
 {
     public class ApiException
     {
