@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using ASPNETAngularDemo.API.Entities;
@@ -34,7 +35,7 @@ namespace ASPNETAngularDemo.API.Controllers
         {
             var thing = _context.Users.Find(-1);
             var thingToReturn = thing.ToString();
-            return thingToReturn;
+            return thingToReturn; return StatusCode(500, "Unable to convert user to a string.");
         }
         [HttpGet("bad-request")]
         public ActionResult<string> GetBadRequest()
