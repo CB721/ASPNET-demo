@@ -9,6 +9,8 @@ using API.Entities;
 
 namespace API.Controllers
 {
+    // protected route - ms authorization package needed
+    [Authorize]
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -16,15 +18,11 @@ namespace API.Controllers
         {
             _context = context;
         }
-        // unprotected route
-        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
-        // protected route - ms authorization package needed
-        [Authorize]
         // api/users/3
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id)
