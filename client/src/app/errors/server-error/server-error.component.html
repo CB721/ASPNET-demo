@@ -1,0 +1,28 @@
+<h4>
+    Internal Server Error - Please Refresh the Page
+</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weight-bold">What to do next?</p>
+    <ol>
+        <li>
+            Open Chrome Dev Tools
+        </li>
+        <li>
+            Inspect the Network Tab
+        </li>
+        <li>
+            Check the failing request in red
+        </li>
+        <li>
+            Examine the request URL - make sure it is correct
+        </li>
+        <li>
+            Reproduce the error in Postman - if we see the same response, than the issue isn't on the client
+        </li>
+    </ol>
+    <p>
+        The Following is the Stack Trace
+    </p>
+    <code class="mt-5" style="background-color: rgb(83, 83, 83);">{{error.details}}</code>
+</ng-container>
