@@ -1,0 +1,44 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { take } from 'rxjs/operators';
+import { Member } from 'src/app/_models/member';
+import { User } from 'src/app/_models/user';
+import { AccountService } from 'src/app/_services/account.service';
+import { MemberService } from 'src/app/_services/member.service';
+
+@Component({
+  selector: 'app-edit-members',
+  templateUrl: './edit-members.component.html',
+  styleUrls: ['./edit-members.component.css'],
+})
+export class EditMembersComponent implements OnInit {
+  @ViewChild('editForm') editForm: NgForm;
+  member: Member;
+  user: User;
+  constructor(
+    private accountService: AccountService,
+    private memberService: MemberService,
+    private toastr: ToastrService
+  ) {
+    this.accountService.currentUser$
+      .pipe(take(1))
+      .subscribe((user) => (this.user = user));
+  }
+
+  ngOnInit(): void {
+    this.loadMember();
+  }
+
+  loadMember() {
+    this.memberService.getMember(this.user.username).subscribe((member) => {
+      this.member = member;
+    });
+  }
+
+  updateMember() {
+    console.log(this.member);
+    this.toastr.success('Profile Update Successfully');
+    this.editForm.reset(this.member);
+  }
+}
