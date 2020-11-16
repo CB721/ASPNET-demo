@@ -18,4 +18,8 @@ export class MemberService {
   getMember(username: string) {
     return this.http.get<Member>(`${this.baseUrl}users/${username}`);
   }
+
+  updateMember(member: Member) {
+    return this.http.patch(`${this.baseUrl}users`, member);
+  }
 }
