@@ -23,7 +23,7 @@
         </ul>
 
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-            <a href="#" class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</a>
+            <div class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</div>
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a href="#" routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
                 <div class="dropdown-divider"></div>
