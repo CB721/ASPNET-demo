@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Text;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
@@ -47,7 +48,9 @@ namespace API.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             // find a matching user in the db based on their username
-            var user = await _context.Users.SingleOrDefaultAsync(existingUser => existingUser.UserName == loginDto.UserName);
+            var user = await _context.Users
+                .Include(p => p.Photos)
+                .SingleOrDefaultAsync(existingUser => existingUser.UserName == loginDto.UserName);
 
             if (user == null) return Unauthorized("Invalid username.");
 
@@ -64,7 +67,8 @@ namespace API.Controllers
             return new UserDto
             {
                 Username = user.UserName,
-                Token = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user),
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
             };
         }
 
