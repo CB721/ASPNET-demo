@@ -1,6 +1,7 @@
 using API.Entities;
 using API.Interfaces;
 using API.DTOs;
+using API.Helpers;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,12 +44,14 @@ namespace API.Data
                 .Include(p => p.Photos)
                 .SingleOrDefaultAsync(x => x.UserName == username);
         }
-        public async Task<IEnumerable<MemberDto>> GetMembersAsync()
+        public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
         {
-            return await _context
+            var query = _context
                 .Users
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-                .ToListAsync();
+                .AsNoTracking();
+
+            return await PagedList<MemberDto>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
         }
         public async Task<MemberDto> GetMemberAsync(string username)
         {
