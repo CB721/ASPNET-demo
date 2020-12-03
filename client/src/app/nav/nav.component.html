@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <ng-container *ngIf="accountService.currentUser$ | async">
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
                 </li>
                 <li class="nav-item">
@@ -23,12 +23,12 @@
         </ul>
 
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-            <img src="{{user.photoUrl}}" alt="{{user.username}}" />
-            <a href="#" class="dropdown-toggle text-light ml-2" dropdownToggle>Welcome {{user.username | titlecase}}</a>
+            <img src="{{user.photoUrl || './assets/user.png'}}" alt="{{user.username}}" />
+            <a class="dropdown-toggle text-light ml-2" dropdownToggle>Welcome {{user.username | titlecase}}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
-                <a href="#" routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
+                <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item" (click)="logout()">Logout</a>
+                <a class="dropdown-item" (click)="logout()">Logout</a>
             </div>
         </div>
 
